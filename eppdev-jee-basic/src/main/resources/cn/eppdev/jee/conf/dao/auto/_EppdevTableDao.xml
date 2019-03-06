@@ -146,6 +146,7 @@
         <include refid="cn.eppdev.jee.conf.dao.EppdevTableDao.customRefJoin"/>
         <where>
             <if test="id != null and id != ''">and a.id=#{id}</if>
+            <if test="tableName != null and tableName != ''">and a.table_name=#{tableName}</if>
             <if test="versionId != null and versionId != ''">and a.version_id=#{versionId}</if>
             <if test="delFlag != null">and a.del_flag=#{delFlag}</if>
                 and a.del_flag = 0

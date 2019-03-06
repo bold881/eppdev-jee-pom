@@ -154,7 +154,7 @@
         <include refid="${basicConf.BASIC_PACKAGE_NAME}<#if moduleName?exists && moduleName?trim?length &gt; 0>.${moduleName?trim}</#if>.dao.${entityName}Dao.customRefJoin"/>
         <where>
             <#list columnList as column>
-            <#if column.createEqualFlag == 1>
+            <#if column.createEqualFlag == 1 || column.logicKeyFlag == 1>
             <if test="${column.propertyName} != null<#if column.javaType=='String'> and ${column.propertyName} != ''</#if>">and a.${column.columnName}=${r"#{"}${column.propertyName}${r"}"}</if>
             </#if>
             <#if column.createInFlag == 1>

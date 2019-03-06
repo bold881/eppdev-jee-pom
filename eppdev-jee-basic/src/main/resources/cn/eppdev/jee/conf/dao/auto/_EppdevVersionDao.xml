@@ -113,6 +113,7 @@
         <include refid="cn.eppdev.jee.conf.dao.EppdevVersionDao.customRefJoin"/>
         <where>
             <if test="id != null and id != ''">and a.id=#{id}</if>
+            <if test="versionName != null and versionName != ''">and a.version_name=#{versionName}</if>
             <if test="delFlag != null">and a.del_flag=#{delFlag}</if>
                 and a.del_flag = 0
             <if test="_customWhere != null and _customWhere != ''">${_customWhere}</if>
